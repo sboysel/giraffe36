@@ -1,0 +1,162 @@
+units:
+  kx: U
+  ky: U
+
+points:
+  zones:
+    matrix:
+      anchor:
+        shift: [8kx, -8ky]
+      columns:
+        pinky:
+          key:
+            stagger: 0ky
+        ring:
+          key:
+            stagger: 0.5ky
+        middle:
+          key:
+            stagger: 0.25ky
+        index:
+          key:
+            stagger: -0.4ky
+        inner:
+          key:
+            stagger: -0.1ky
+      rows:
+        bottom:
+        home:
+        top:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-0.25kx, -1.1ky]
+      columns:
+        near:
+          key:
+            stagger: 0ky
+            splay: -10
+        home:
+          key:
+            stagger: 0ky
+            splay: -10
+            shift: [0.125kx, -0.075ky]
+        far:
+          key:
+            stagger: 0ky
+            splay: -10
+            shift: [0.25kx, -0.125ky]
+      rows:
+        home:
+  key:
+    padding: ky
+
+outlines:
+  _switches:
+    - what: rectangle
+      where: true
+      size: 14
+      bound: false
+  _mcu_cutout:
+    - what: polygon
+      points:
+        - ref: matrix_inner_top
+          shift: [0.75kx, 2ky]
+        - ref: matrix_inner_bottom
+          shift: [0.75kx, -0.75ky]
+        - ref: thumbfan_far_home
+          shift: [0.75kx, 0.75ky]
+        - ref: matrix_inner_top
+          shift: [2kx, 2ky]
+  otter36_bottom_plate:
+    - what: polygon
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.6kx, 0.6ky]
+        - ref: matrix_pinky_bottom
+          shift: [-0.6kx, -0.6ky]
+        - ref: thumbfan_near_home
+          shift: [0, -0.6ky]
+        - ref: thumbfan_far_home
+          shift: [0.6kx, -0.6ky]
+        - ref: thumbfan_far_home
+          shift: [0.6kx, 0.6ky]
+        - ref: matrix_inner_top
+          shift: [2kx, 0.4ky]
+        - ref: matrix_inner_top
+          shift: [0, 0.6ky]
+        - ref: matrix_middle_top
+          shift: [0.4kx, 0.6ky]
+        - ref: matrix_middle_top
+          shift: [-0.8kx, 0.6ky]
+      fillet: 2
+  otter36_top_plate:
+    - otter36_bottom_plate 
+    - -_mcu_cutout
+    - -_switches
+
+pcbs:
+  otter36_pcb:
+    outlines:
+      main:
+        outline: otter36_bottom_plate
+        footprints:
+    footprints:
+      mx:
+        what: mx
+        where: true
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true 
+          # from: "{{colrow}}"
+          # to: "{{column_net}}"
+          from: "{{name}}"
+          to: GND
+      elitec:
+        what: elitec
+        where:
+          ref: matrix_inner_top
+          shift: [1.3kx, -0.5ky]
+          rotate: 270
+        params:
+          orientation: down
+      trrs:
+        what: trrs
+        where:
+          ref: matrix_inner_bottom
+          shift: [2.3kx, 0.25ky]
+          rotate: 280
+        params:
+          A: GND
+          B: GND
+          C: F4
+          D: VCC
+          reverse: true
+          symmetric: true
+      tagline_front:
+        what: text
+        where:
+          ref: thumbfan_home_home
+          shift: [0, -0.5ky]
+        params:
+          text: 'otter36 v0.0.1'
+          side: 'F'
+      tagline_back:
+        what: text
+        where:
+          ref: thumbfan_home_home
+          shift: [0, -0.5ky]
+        params:
+          text: 'otter36 v0.0.1'
+          side: 'B'
+
+cases:
+  otter36_bottom_case:
+    - what: outline
+      name: otter36_bottom_plate
+      extrude: 3
+  otter36_top_case:
+    - what: outline
+      name: otter36_top_plate
+      extrude: 2 
