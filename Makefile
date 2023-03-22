@@ -25,7 +25,7 @@ output/cases/giraffe36_top_case.stl: output/cases/giraffe36_top_case.jscad
 output/pcbs/giraffe36_pcb_front.jpg: output/pcbs/giraffe36_pcb.kicad_pcb 
 	pcbdraw plot \
 		--side front \
-		--style oshpark-purple \
+		--style gatema-green \
 		$< $@
 	mkdir -p img 
 	cp $@ img/$(notdir $@)
@@ -33,7 +33,7 @@ output/pcbs/giraffe36_pcb_front.jpg: output/pcbs/giraffe36_pcb.kicad_pcb
 output/pcbs/giraffe36_pcb_back.jpg: output/pcbs/giraffe36_pcb.kicad_pcb
 	pcbdraw plot \
 		--side back \
-		--style oshpark-purple \
+		--style gatema-green \
 		$< $@
 	mkdir -p img 
 	cp $@ img/$(notdir $@)
