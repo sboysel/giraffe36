@@ -40,7 +40,7 @@ output/pcbs/giraffe36_pcb_back.jpg: output/pcbs/giraffe36_pcb.kicad_pcb
 
 img/giraffe36_pcb_front_small.jpg: output/pcbs/giraffe36_pcb_front.jpg
 	mkdir -p img
-	convert $< -resize 25% $@
+	convert $< -resize 50% $@
 
 # output/pcbs/giraffe36_pcb_front.svg: output/pcbs/giraffe36_pcb.kicad_pcb 
 # 	kicad-cli pcb export svg -l '*' -o $@ $<

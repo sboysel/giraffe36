@@ -61,11 +61,11 @@ outlines:
     - what: polygon
       points:
         - ref: matrix_inner_top
-          shift: [0.75kx, 2ky]
+          shift: [0.5kx, 2ky]
         - ref: matrix_inner_bottom
-          shift: [0.75kx, -0.75ky]
+          shift: [0.5kx, -1ky]
         - ref: thumbfan_far_home
-          shift: [0.75kx, 0.75ky]
+          shift: [1kx, 0.55ky]
         - ref: matrix_inner_top
           shift: [2kx, 2ky]
   giraffe36_bottom_plate:
@@ -76,22 +76,22 @@ outlines:
           shift: [2kx, 0.4ky]
         # N
         - ref: matrix_middle_top
-          shift: [0kx, 0.6ky]
+          shift: [0.4kx, 0.55ky]
+        - ref: matrix_middle_top
+          shift: [-0.9kx, 0.55ky]
         # NW
-        - ref: matrix_ring_top
-          shift: [-0.4kx, 0.6ky]
         - ref: matrix_pinky_top
-          shift: [-0.6kx, 0.6ky]
+          shift: [-0.55kx, 0.55ky]
         # SW
         - ref: matrix_pinky_bottom
-          shift: [-0.6kx, -0.6ky]
+          shift: [-0.55kx, -0.55ky]
         # SE
         - ref: thumbfan_near_home
-          shift: [0, -0.6ky]
+          shift: [0, -0.55ky]
         - ref: thumbfan_far_home
-          shift: [0.6kx, -0.6ky]
+          shift: [0.55kx, -0.55ky]
         - ref: thumbfan_far_home
-          shift: [0.6kx, 0.75ky]
+          shift: [0.55kx, 0.75ky]
       fillet: 5
   giraffe36_top_plate:
     - giraffe36_bottom_plate 
@@ -118,7 +118,7 @@ pcbs:
         what: elitec
         where:
           ref: matrix_inner_top
-          shift: [1.05kx, -0.5ky]
+          shift: [1.075kx, -0.5ky]
           rotate: 270
         params:
           D3: matrix_index_top
@@ -126,9 +126,9 @@ pcbs:
           D1: matrix_middle_top
           D0: matrix_ring_top
           D4: matrix_pinky_top
-          C6: matrix_index_home
-          D7: matrix_inner_home
-          E6: matrix_middle_home
+          C6: matrix_middle_home
+          D7: matrix_index_home
+          E6: matrix_inner_home
           B4: matrix_ring_home
           B5: matrix_pinky_home
           B7: matrix_middle_bottom
