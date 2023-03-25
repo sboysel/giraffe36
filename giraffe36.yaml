@@ -13,7 +13,7 @@ points:
             stagger: 0
         ring:
           key:
-            stagger: 0.5ky
+            stagger: 0.25ky
         middle:
           key:
             stagger: 0.25ky
@@ -40,12 +40,12 @@ points:
           key:
             stagger: 0ky
             splay: -10
-            shift: [0.125kx, -0.075ky]
+            shift: [0.15kx, -0.075ky]
         far:
           key:
             stagger: 0ky
             splay: -10
-            shift: [0.25kx, -0.125ky]
+            shift: [0.3kx, -0.125ky]
       rows:
         home:
   key:
@@ -76,9 +76,9 @@ outlines:
           shift: [2kx, 0.4ky]
         # N
         - ref: matrix_middle_top
-          shift: [0.4kx, 0.55ky]
+          shift: [0.5kx, 0.55ky]
         - ref: matrix_middle_top
-          shift: [-0.9kx, 0.55ky]
+          shift: [-0.5kx, 0.55ky]
         # NW
         - ref: matrix_pinky_top
           shift: [-0.55kx, 0.55ky]
@@ -134,8 +134,8 @@ pcbs:
           B7: matrix_middle_bottom
           D5: matrix_index_bottom
           C7: matrix_inner_bottom
-          F1: matrix_ring_bottom
-          F0: matrix_pinky_bottom
+          F1: matrix_pinky_bottom
+          F0: matrix_ring_bottom
           B6: thumbfan_near_home
           B2: thumbfan_home_home
           B3: thumbfan_far_home
@@ -165,7 +165,7 @@ pcbs:
         what: text
         where:
           ref: thumbfan_home_home
-          shift: [0, -0.5ky]
+          shift: [0, -0.55ky]
         params:
           text: 'giraffe36 v0.0.1'
           side: 'F'
@@ -173,7 +173,7 @@ pcbs:
         what: text
         where:
           ref: thumbfan_home_home
-          shift: [0, -0.5ky]
+          shift: [0, -0.55ky]
         params:
           text: 'giraffe36 v0.0.1'
           side: 'B'
