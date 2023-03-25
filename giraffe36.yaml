@@ -111,9 +111,16 @@ pcbs:
         params:
           keycaps: true
           reverse: true
-          hotswap: true 
+          hotswap: false 
           from: "{{name}}"
           to: GND
+      # via:
+      #   what: via
+      #   where: true
+      #   adjust:
+      #     shift: [0, -0.25ky]
+      #   params:
+      #     net: "{{name}}"
       elitec:
         what: elitec
         where:
@@ -121,8 +128,8 @@ pcbs:
           shift: [1.075kx, -0.5ky]
           rotate: 270
         params:
-          D3: matrix_index_top
-          D2: matrix_inner_top
+          D3: matrix_inner_top
+          D2: matrix_index_top
           D1: matrix_middle_top
           D0: matrix_ring_top
           D4: matrix_pinky_top
