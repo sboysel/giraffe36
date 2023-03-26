@@ -38,19 +38,26 @@
           "height": 1.524,
           "width": 1.524
         },
-        "silk_line_width": 0.09999999999999999,
+        "silk_line_width": 0.12,
         "silk_text_italic": false,
         "silk_text_size_h": 1.0,
         "silk_text_size_v": 1.0,
-        "silk_text_thickness": 0.09999999999999999,
+        "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.508
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
+        "filename": "board_design_settings.json",
         "version": 2
       },
       "rule_severities": {
@@ -107,7 +114,7 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.075,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.19999999999999998,
@@ -117,9 +124,9 @@
         "min_text_height": 0.7999999999999999,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.0,
+        "min_track_width": 0.19999999999999998,
         "min_via_annular_width": 0.09999999999999999,
-        "min_via_diameter": 0.5,
+        "min_via_diameter": 0.39999999999999997,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -136,7 +143,7 @@
       ],
       "teardrop_parameters": [
         {
-          "td_curve_segcount": 5,
+          "td_curve_segcount": 0,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -145,7 +152,7 @@
           "td_width_to_size_filter_ratio": 0.9
         },
         {
-          "td_curve_segcount": 5,
+          "td_curve_segcount": 0,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -154,7 +161,7 @@
           "td_width_to_size_filter_ratio": 0.9
         },
         {
-          "td_curve_segcount": 5,
+          "td_curve_segcount": 0,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -163,8 +170,15 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "layer_presets": [],
@@ -196,9 +210,26 @@
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Power",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.4,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
         "wire_width": 6
       }
     ],
@@ -207,7 +238,148 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Default",
+        "pattern": ""
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_pinky_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_pinky_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_pinky_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_ring_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_ring_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_ring_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_middle_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_middle_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_middle_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_index_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_index_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_index_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_inner_bottom"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_inner_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "matrix_inner_top"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "thumbfan_near_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "thumbfan_home_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "thumbfan_far_home"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GP0"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GP1"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GP20"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GP21"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GP22"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "RUN"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GP26"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GP27"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "AGND"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "GP28"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "ADC_VREF"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "3V3"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "3V3_EN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VSYS"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "VBUS"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {

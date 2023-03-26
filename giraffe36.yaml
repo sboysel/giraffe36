@@ -77,7 +77,7 @@ outlines:
       points:
         # NE
         - ref: matrix_inner_top
-          shift: [2.3kx, 0.4ky]
+          shift: [2.3kx, 0.5ky]
         # N
         - ref: matrix_middle_top
           shift: [0.5kx, 0.55ky]
@@ -148,7 +148,7 @@ pcbs:
         what: trrs
         where:
           ref: matrix_inner_top
-          shift: [2.05kx, 0.4ky]
+          shift: [2.05kx, 0.5ky]
           rotate: 0
         params:
           D: GP0  # sleeve
