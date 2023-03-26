@@ -42,12 +42,6 @@ img/giraffe36_pcb_front_small.jpg: output/pcbs/giraffe36_pcb_front.jpg
 	mkdir -p img
 	convert $< -resize 50% $@
 
-# output/pcbs/giraffe36_pcb_front.svg: output/pcbs/giraffe36_pcb.kicad_pcb 
-# 	kicad-cli pcb export svg -l '*' -o $@ $<
-
-# output/pcbs/giraffe36_pcb_front.pdf: output/pcbs/giraffe36_pcb.kicad_pcb 
-# 	kicad-cli pcb export pdf -l '*' -o $@ $<
-
 clean:
 	rm -rf output/pcbs/giraffe36_pcb.kicad_pcb \
 		output/cases/giraffe36_bottom_plate.jscad \
