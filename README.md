@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/version-v0.0.1-blue)
 
-A 36 key split board. Inspired largely by Ferris Sweep / sweep36, draculad, and samoklava.
+A 36 key split board. Inspirations: Ferris Sweep / sweep36, draculad, samoklava, piantor.
 
 ![pcb front render](img/giraffe36_pcb_front_small.jpg?raw=true)
 
