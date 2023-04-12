@@ -2,10 +2,12 @@
     "name": "giraffe36",
     "version": "0.0.1",
     "dependencies": {
-        "@jscad/modeling": "2.11.0",
         "ergogen": "github:sboysel/ergogen#develop"
     },
     "scripts": {
         "gen": "ergogen giraffe36.yaml"
+    },
+    "devDependencies": {
+        "@jscad/cli": "^2.2.25"
     }
 }

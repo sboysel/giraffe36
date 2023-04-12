@@ -8,25 +8,45 @@ points:
       anchor:
         shift: [8kx, -8ky]
       columns:
+        outer:
+          key:
+            stagger: 0 
+          rows:
+            home:
         pinky:
           key:
-            stagger: 0
+            stagger: -0.8ky
+          rows:
+            bottom:
+            home:
         ring:
           key:
             stagger: 0.25ky
+          rows:
+            bottom:
+            home:
+            top:
         middle:
           key:
             stagger: 0.25ky
+          rows:
+            bottom:
+            home:
+            top:
         index:
           key:
             stagger: -0.25ky
+          rows:
+            bottom:
+            home:
+            top:
         inner:
           key:
             stagger: -0.125ky
-      rows:
-        bottom:
-        home:
-        top:
+          rows:
+            bottom:
+            home:
+            top:
     thumbfan:
       anchor:
         ref: matrix_inner_bottom
@@ -40,67 +60,45 @@ points:
           key:
             stagger: 0ky
             splay: -10
-            shift: [0.15kx, -0.075ky]
+            shift: [0.125kx, -0.075ky]
         far:
           key:
             stagger: 0ky
             splay: -10
-            shift: [0.3kx, -0.125ky]
+            shift: [0.25kx, -0.125ky]
       rows:
         home:
   key:
     padding: ky
 
 outlines:
-  _switches:
-    - what: rectangle
-      where: true
-      size: 14
-      bound: false
-  _mcu_cutout:
-    - what: polygon
-      points:
-        # NW
-        - ref: matrix_inner_top
-          shift: [0.5kx, 2ky]
-        # SW
-        - ref: matrix_inner_bottom
-          shift: [0.5kx, -1ky]
-        # SE
-        - ref: thumbfan_far_home
-          shift: [1kx, 0.55ky]
-        # NE
-        - ref: matrix_inner_top
-          shift: [4kx, 4ky]
   giraffe36_bottom_plate:
     - what: polygon
       points:
-        # NE
-        - ref: matrix_inner_top
-          shift: [2.3kx, 0.5ky]
         # N
         - ref: matrix_middle_top
-          shift: [0.5kx, 0.55ky]
+          shift: [-0.6kx, 0.6ky]
         - ref: matrix_middle_top
-          shift: [-0.5kx, 0.55ky]
-        # NW
-        - ref: matrix_pinky_top
-          shift: [-0.55kx, 0.55ky]
-        # SW
-        - ref: matrix_pinky_bottom
-          shift: [-0.55kx, -0.55ky]
+          shift: [0.6kx, 0.6ky]
+        # NE
+        - ref: matrix_inner_top
+          shift: [0.6kx, 0.6ky]
         # SE
-        - ref: thumbfan_near_home
-          shift: [0, -0.55ky]
         - ref: thumbfan_far_home
-          shift: [0.55kx, -0.55ky]
+          shift: [0.6kx, 0.6ky]
         - ref: thumbfan_far_home
-          shift: [0.55kx, 0.75ky]
-      fillet: 5
-  giraffe36_top_plate:
-    - giraffe36_bottom_plate 
-    - -_mcu_cutout
-    - -_switches
+          shift: [0.6kx, -0.6ky]
+        # SW
+        - ref: matrix_outer_home
+          shift: [-0.6kx, -0.9ky]
+        # NW
+        - ref: matrix_outer_home
+          shift: [-0.6kx, 1.1ky]
+        - ref: matrix_outer_home
+          shift: [0.3kx, 1.6ky]
+        - ref: matrix_outer_home
+          shift: [0.3kx, 2.1ky]
+      fillet: 3
 
 pcbs:
   giraffe36_pcb:
@@ -118,45 +116,30 @@ pcbs:
           hotswap: false 
           from: "{{name}}"
           to: GND
-      pico:
-        what: weact_pi_pico
+      mcu:
+        what: rp2040_zero_tht_pads
+        where:
+          ref: matrix_pinky_home
+          shift: [-0.05kx, 1.2ky]
+        params:
+          GP2: matrix_ring_top
+          GP14: thumbfan_near_home
+          GP15: thumbfan_home_home
+          GP26: thumbfan_far_home
+          GP27: matrix_pinky_home
+          GP28: matrix_pinky_bottom
+          GP29: matrix_outer_home
+      molex:
+        what: molex_441440003
         where:
           ref: matrix_inner_bottom
-          shift: [1.1kx, 1.1ky]
-          rotate: 0
+          shift: [1kx, -1.3ky]
+          rotate: 180
         params:
-          orientation: "up"
-          GP2: matrix_inner_top
-          GP3: matrix_index_top
-          GP4: matrix_middle_top
-          GP5: matrix_ring_top
-          GP6: matrix_pinky_top
-          GP7: matrix_inner_home
-          GP8: matrix_index_home
-          GP9: matrix_middle_home
-          GP10: matrix_ring_home
-          GP11: matrix_pinky_home
-          GP12: matrix_inner_bottom
-          GP13: matrix_index_bottom
-          GP14: matrix_middle_bottom
-          GP15: matrix_ring_bottom
-          GP16: matrix_pinky_bottom
-          GP17: thumbfan_far_home
-          GP18: thumbfan_home_home
-          GP19: thumbfan_near_home
-      trrs:
-        what: trrs
-        where:
-          ref: matrix_inner_top
-          shift: [2.05kx, 0.5ky]
-          rotate: 0
-        params:
-          D: GP0  # sleeve
-          C: GP1  # ring 
-          B: GND  # ring 
-          A: VSYS  # tip
-          reverse: true
-          symmetric: false
+          TX: GP0
+          RX: GP1
+          POWER: 3V3
+          GND: GND
       tagline_front:
         what: text
         where:
@@ -181,80 +164,8 @@ pcbs:
         params:
           text: 'JLCJLCJLCJLC'
           side: 'F'
-      # via:
-      #   what: via
-      #   where: true
-      #   adjust:
-      #     shift: [0, -0.25ky]
-      #   params:
-      #     net: "{{name}}"
-      # elitec:
-      #   what: elitec
-      #   where:
-      #     ref: matrix_inner_top
-      #     shift: [1.075kx, -0.5ky]
-      #     rotate: 270
-      #   params:
-      #     D3: matrix_index_top
-      #     D2: matrix_inner_top
-      #     D1: matrix_middle_top
-      #     D0: matrix_ring_top
-      #     D4: matrix_pinky_top
-      #     C6: matrix_middle_home
-      #     D7: matrix_index_home
-      #     E6: matrix_inner_home
-      #     B4: matrix_ring_home
-      #     B5: matrix_pinky_home
-      #     B7: matrix_middle_bottom
-      #     D5: matrix_index_bottom
-      #     C7: matrix_inner_bottom
-      #     F1: matrix_pinky_bottom
-      #     F0: matrix_ring_bottom
-      #     B6: thumbfan_near_home
-      #     B2: thumbfan_home_home
-      #     B3: thumbfan_far_home
-      #     # B1: 
-      #     # F7:
-      #     # F6:
-      #     # F5:
-      #     # F4:
-      #     # VCC:
-      #     # RST:
-      #     # GND:
-      #     # B0:
-      # m2_nw:
-      #   what: m2
-      #   where:
-      #     ref: matrix_ring_top
-      #     shift: [-0.5kx, -0.5ky]
-      # m2_ne:
-      #   what: m2
-      #   where:
-      #     ref: matrix_index_top
-      #     shift: [0.5kx, -0.5ky]
-      # m2_sw:
-      #   what: m2
-      #   where:
-      #     ref: matrix_ring_bottom
-      #     shift: [-0.5kx, -0.5ky]
-      # m2_se:
-      #   what: m2
-      #   where:
-      #     ref: matrix_index_bottom
-      #     shift: [0.5kx, -0.5ky]
       # m2_thumb:
       #   what: m2
       #   where:
       #     ref: thumbfan_home_home
       #     shift: [0.575kx, 0]
-
-
-cases:
-  giraffe36_bottom_case:
-    - what: outline
-      name: giraffe36_bottom_plate
-      extrude: 3
-  giraffe36_top_case:
-    - what: outline
-      name: giraffe36_top_plate
-      extrude: 2 
