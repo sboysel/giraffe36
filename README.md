@@ -1,6 +1,7 @@
 # giraffe36
 
-![](https://img.shields.io/badge/version-v0.0.1-blue) 
+![](https://img.shields.io/badge/version-v0.0.1-blue) [![CC-BY license](https://img.shields.io/badge/license-CC--4.0--BY-blue)](https://creativecommons.org/licenses/by/4.0)
+
 
 ![pcb front render](img/giraffe36_built_small.jpg?raw=true)
 
