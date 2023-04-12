@@ -17,10 +17,10 @@ output/pcbs/giraffe36_pcb.kicad_pcb: giraffe36.yaml
 	npm run gen
 
 output/cases/giraffe36_bottom_case.stl: output/cases/giraffe36_bottom_case.jscad
-	openjscad $< -of stl
+	npx @jscad/cli@1 $< -of stla -o $@
 
 output/cases/giraffe36_top_case.stl: output/cases/giraffe36_top_case.jscad
-	openjscad $< -of stl
+	npx @jscad/cli@1 $< -of stla -o $@
 
 output/pcbs/giraffe36_pcb_front.jpg: output/pcbs/giraffe36_pcb.kicad_pcb 
 	pcbdraw plot \
