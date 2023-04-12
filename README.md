@@ -4,7 +4,7 @@
 
 A 36 key split board. Inspirations: Ferris Sweep / sweep36, draculad, samoklava, piantor.
 
-![pcb front render](img/giraffe36_pcb_front_small.jpg?raw=true)
+![pcb front render](img/giraffe36_built_small.jpg?raw=true)
 
 ## Goals
 
@@ -15,6 +15,15 @@ A 36 key split board. Inspirations: Ferris Sweep / sweep36, draculad, samoklava,
 - diodeless
 - lowered thumb cluster comfortable to my hands
 - to learn PCB design!
+
+## Build
+
+- 2x PCB (they are reversible)
+- 2x Pi Pico
+- 2x TRRS jack
+- 36x MX switches
+
+Firmware can be found in `firmware/kmk`
 
 ## Development 
 
@@ -28,18 +37,3 @@ npm install
 pip install -r requirements.txt
 make
 ```
-
-## Fabrication notes
-
-1. Generate unrouted PCBs with ergogen
-2. Route in KiCad
-  - default track widths
-  - add teardrops (defaults)
-  - round tracks (defaults)
-3. Ground layer
-  - front and back copper layer
-  - draw polygon outside edge cuts
-  - make sure net class GND is selected
-  - hatched fill, 45 degree orientation
-  - fill all zones at least one final time once all tracks have been routed
-4. Export gerbers
