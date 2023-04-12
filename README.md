@@ -1,6 +1,6 @@
 # giraffe36
 
-![](https://img.shields.io/badge/version-v0.0.1-blue)
+![](https://img.shields.io/badge/version-v0.0.2-blue)
 
 A 36 key split board. Inspirations: Ferris Sweep / sweep36, draculad, samoklava, piantor.
 
@@ -11,7 +11,7 @@ A 36 key split board. Inspirations: Ferris Sweep / sweep36, draculad, samoklava,
 - simplicity
 - declarative design (ergogen)
 - 5x3+3 wired split
-- MX hotswap
+- MX
 - diodeless
 - lowered thumb cluster comfortable to my hands
 - to learn PCB design!
