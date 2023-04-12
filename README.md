@@ -23,7 +23,7 @@ A 36 key split board. Inspirations: Ferris Sweep / sweep36, draculad, samoklava,
 - 2x TRRS jack
 - 36x MX switches
 
-Firmware can be found in `firmware/kmk`
+Gerbers can be found in `output/pcbs/routed/`. Firmware can be found in `firmware/kmk/`.
 
 ## Development 
 
