@@ -6,7 +6,7 @@
 
 A 36 key split keyboard with "long-necked" thumb clusters. Wired, powered by Raspberry Pi Picos, diodeless. Inspirations include Ferris Sweep / sweep36, draculad, samoklava, piantor.
 
-**Status:** 
+**Status:** [v0.0.1](https://github.com/sboysel/giraffe36/releases/tag/v0.0.1) / [e54525c](https://github.com/sboysel/giraffe36/commit/e54525ce078f5a7b52e7f0cd5a91edfa0f02212c) prototypes have tested and are functional. See [Tags](https://github.com/sboysel/giraffe36/tags).
 
 ## Goals
 
